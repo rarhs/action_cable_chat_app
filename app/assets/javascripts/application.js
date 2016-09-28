@@ -15,8 +15,10 @@
 //= require turbolinks
 //= require_tree .
 
-greeting_doubler = function(phrase) {
-  alert(phrase + " " + phrase);
-};
+message_appender = function(content) {
+  $('#messages-table').append(content);
+}
 
-greeting_doubler('hello, world!');
+$(document).on('turbolinks:load', function() {
+  message_appender('hello, world!');
+});
